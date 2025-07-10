@@ -45,33 +45,6 @@ SmartInsureAI solves these challenges by building a **complete end-to-end MLOps 
 
 ---
 
-## 🛠️ Project Structure
-
-SmartInsureAI/
-│
-├── src/                         # Core source code
-│   ├── components/              # Modular pipeline components (ingestion, training)
-│   ├── entity/                  # Data classes: config_entity.py, artifact_entity.py
-│   ├── config/                  # Schema definitions and DB configurations
-│   ├── utils/                   # Utility functions (validation, transformation)
-│   └── aws_storage/             # AWS S3 upload/download handlers
-│
-├── api/                         # FastAPI-based prediction service
-│   ├── app.py                   # Main API entry point
-│   ├── templates/               # Web UI templates (HTML)
-│   └── static/                  # Static assets (CSS, JS, images)
-│
-├── notebook/                    # EDA notebooks and MongoDB data push demo
-├── tests/                       # Unit and integration test cases
-├── Dockerfile                   # Docker build configuration
-├── requirements.txt             # Python dependencies
-├── setup.py                     # Package metadata
-├── pyproject.toml               # Build system config
-├── template.py                  # Initial project scaffold script
-└── README.md                    # Project documentation
-
----
-
 ## 🧩 Step-by-Step Implementation
 
 ### 1️⃣ Project Initialization
@@ -83,99 +56,100 @@ SmartInsureAI/
   conda create -n vehicle python=3.10 -y
   conda activate vehicle
   pip install -r requirements.txt
-
+  
 2️⃣ MongoDB Atlas Integration
-Set up MongoDB Atlas cluster
-
-Push dataset to MongoDB using mongoDB_demo.ipynb
-
-Verify collections via the MongoDB UI
+    Set up MongoDB Atlas cluster
+    
+    Push dataset to MongoDB using mongoDB_demo.ipynb
+    
+    Verify collections via the MongoDB UI
+    
 
 3️⃣ Logging, Exception Handling & EDA
-Implement logging & exception modules
-
-Run test via demo.py
-
-Perform EDA and feature engineering in the notebook/
+    Implement logging & exception modules
+    
+    Run test via demo.py
+    
+    Perform EDA and feature engineering in the notebook/
 
 4️⃣ Data Ingestion Pipeline
-Use components.data_ingestion.py and data_access/
-
-Configure ingestion settings in config_entity.py and artifact_entity.py
-
-MongoDB URL setup:
-export MONGODB_URL="mongodb+srv://<username>:<password>@cluster.mongodb.net/"
+    Use components.data_ingestion.py and data_access/
+    
+    Configure ingestion settings in config_entity.py and artifact_entity.py
+    
+    MongoDB URL setup:
+    export MONGODB_URL="mongodb+srv://<username>:<password>@cluster.mongodb.net/"
 
 5️⃣ Data Validation & Transformation
-Define schema in config/schema.yaml
-
-Write validation logic in utils.main_utils.py
-
-Transform features in components.data_transformation.py
+    Define schema in config/schema.yaml
+    
+    Write validation logic in utils.main_utils.py
+    
+    Transform features in components.data_transformation.py
 
 6️⃣ Model Training
-Define model logic in components.model_trainer.py
-
-Use estimators defined in entity/estimator.py
-
-Evaluate with cross-validation and key metrics
+    Define model logic in components.model_trainer.py
+    
+    Use estimators defined in entity/estimator.py
+    
+    Evaluate with cross-validation and key metrics
 
 7️⃣ Model Evaluation & AWS S3 Integration
-Set up AWS IAM user and access keys
+    Set up AWS IAM user and access keys
+    
+    Store credentials:
+    
+    bash
+    Copy
+    Edit
+    export AWS_ACCESS_KEY_ID="your_key"
+    export AWS_SECRET_ACCESS_KEY="your_secret"
+    Push model to S3://my-model-mlopsproj (region: us-east-1)
+    
+    Code resides in aws_storage/ and entity/s3_estimator.py
 
-Store credentials:
-
-bash
-Copy
-Edit
-export AWS_ACCESS_KEY_ID="your_key"
-export AWS_SECRET_ACCESS_KEY="your_secret"
-Push model to S3://my-model-mlopsproj (region: us-east-1)
-
-Code resides in aws_storage/ and entity/s3_estimator.py
-
-8️⃣ Prediction API with Flask
-Implement API logic in api/app.py
-
-Load model from S3 and serve predictions
-
-Add frontend HTML in templates/
+8️⃣ Prediction API with FastAPI
+    Implement API logic in api/app.py
+    
+    Load model from S3 and serve predictions
+    
+    Add frontend HTML in templates/
 
 9️⃣ CI/CD with Docker & GitHub Actions
-Create Dockerfile and .dockerignore
-
-Set GitHub Secrets:
-
-AWS_ACCESS_KEY_ID
-
-AWS_SECRET_ACCESS_KEY
-
-ECR_REPO, AWS_DEFAULT_REGION
-
-Automate:
-
-Build → Test → Push → Deploy
-
-Via main.yml GitHub Actions
+    Create Dockerfile and .dockerignore
+    
+    Set GitHub Secrets:
+    
+    AWS_ACCESS_KEY_ID
+    
+    AWS_SECRET_ACCESS_KEY
+    
+    ECR_REPO, AWS_DEFAULT_REGION
+    
+    Automate:
+    
+    Build → Test → Push → Deploy
+    
+    Via main.yml GitHub Actions
 
 🔟 AWS EC2 & Self-Hosted Runner Setup
-Launch EC2 instance
-
-Open port 5080 in the security group
-
-Install Docker and run as GitHub self-hosted runner
-
-Access app via http://<EC2_PUBLIC_IP>:5080
+    Launch EC2 instance
+    
+    Open port 5080 in the security group
+    
+    Install Docker and run as GitHub self-hosted runner
+    
+    Access app via http://<EC2_PUBLIC_IP>:5080
 
 📊 Evaluation Metrics
-Category	Metrics Used
-Model	Accuracy, Precision, Recall, F1, ROC-AUC
-Pipeline	Unit Tests, Integration Tests
-Deployment	GitHub Action Logs, API Health Check
+    Category	Metrics Used
+    Model	Accuracy, Precision, Recall, F1, ROC-AUC
+    Pipeline	Unit Tests, Integration Tests
+    Deployment	GitHub Action Logs, API Health Check
 
 🌐 Final Project Workflow
-Data Ingestion → Validation → Transformation →
-Model Training → Evaluation → Deployment →
-CI/CD Automation → Live API via EC2
+    Data Ingestion → Validation → Transformation →
+    Model Training → Evaluation → Deployment →
+    CI/CD Automation → Live API via EC2
 
 
