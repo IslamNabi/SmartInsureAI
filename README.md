@@ -47,7 +47,29 @@ SmartInsureAI solves these challenges by building a **complete end-to-end MLOps 
 
 ## 🛠️ Project Structure
 
-<pre> SmartInsureAI/ │ ├── src/ # Core source code │ ├── components/ # Modular pipeline components (ingestion, training) │ ├── entity/ # Data classes: config_entity.py, artifact_entity.py │ ├── config/ # Schema definitions and DB configurations │ ├── utils/ # Utility functions (validation, transformation) │ └── aws_storage/ # AWS S3 upload/download handlers │ ├── api/ # FastAPI-based prediction service │ ├── app.py # Main API entry point │ ├── templates/ # Web UI templates (HTML) │ └── static/ # Static assets (CSS, JS, images) │ ├── notebook/ # EDA notebooks and MongoDB data push demo ├── tests/ # Unit and integration test cases ├── Dockerfile # Docker build configuration ├── requirements.txt # Python dependencies ├── setup.py # Package metadata ├── pyproject.toml # Build system config ├── template.py # Initial project scaffold script └── README.md # Project documentation </pre>
+SmartInsureAI/
+│
+├── src/                         # Core source code
+│   ├── components/              # Modular pipeline components (ingestion, training)
+│   ├── entity/                  # Data classes: config_entity.py, artifact_entity.py
+│   ├── config/                  # Schema definitions and DB configurations
+│   ├── utils/                   # Utility functions (validation, transformation)
+│   └── aws_storage/             # AWS S3 upload/download handlers
+│
+├── api/                         # FastAPI-based prediction service
+│   ├── app.py                   # Main API entry point
+│   ├── templates/               # Web UI templates (HTML)
+│   └── static/                  # Static assets (CSS, JS, images)
+│
+├── notebook/                    # EDA notebooks and MongoDB data push demo
+├── tests/                       # Unit and integration test cases
+├── Dockerfile                   # Docker build configuration
+├── requirements.txt             # Python dependencies
+├── setup.py                     # Package metadata
+├── pyproject.toml               # Build system config
+├── template.py                  # Initial project scaffold script
+└── README.md                    # Project documentation
+
 ---
 
 ## 🧩 Step-by-Step Implementation
