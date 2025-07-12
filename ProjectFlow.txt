@@ -1,0 +1,8 @@
+** Project Flow **
+
+-> First: Constants
+-> Second: config_entity
+-> Third: artifact_entity
+-> Fourth: component
+-> Fifth: pipeline
+-> Sixth: App.py/demo.py
