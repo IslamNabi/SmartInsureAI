@@ -6,3 +6,5 @@
 -> Fourth: component
 -> Fifth: pipeline
 -> Sixth: App.py/demo.py
+
+** Triggering CICD Pipeline 
