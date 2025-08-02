@@ -44,6 +44,14 @@ SmartInsureAI solves these challenges by building a **complete end-to-end MLOps 
 | Utilities       | Logging, YAML Configs, Exception Handling     |
 
 ---
+## 🖼️ System Overview
+
+<div align="center">
+  <img src="systemImages/SS-1.png"  width="45%">
+  <img src="systemImages/SS-2.png"  width="45%">
+</div>
+
+---
 
 ## 🧩 Step-by-Step Implementation
 
