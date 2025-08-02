@@ -149,15 +149,24 @@ SmartInsureAI solves these challenges by building a **complete end-to-end MLOps 
     
     Access app via http://<EC2_PUBLIC_IP>:5080
 
-📊 Evaluation Metrics
-    Category	Metrics Used
-    Model	Accuracy, Precision, Recall, F1, ROC-AUC
-    Pipeline	Unit Tests, Integration Tests
-    Deployment	GitHub Action Logs, API Health Check
+## 📊 Evaluation Metrics
 
-🌐 Final Project Workflow
-    Data Ingestion → Validation → Transformation →
-    Model Training → Evaluation → Deployment →
-    CI/CD Automation → Live API via EC2
+| Category      | Metrics Used                          |
+|--------------|---------------------------------------|
+| **Model**    | Accuracy, Precision, Recall, F1, ROC-AUC |
+| **Pipeline** | Unit Tests, Integration Tests         |
+| **Deployment**| GitHub Action Logs, API Health Check  |
+
+## 🌐 Final Project Workflow
+
+```mermaid
+graph LR
+    A[Data Ingestion] --> B[Validation]
+    B --> C[Transformation]
+    C --> D[Model Training]
+    D --> E[Evaluation]
+    E --> F[Deployment]
+    F --> G[CI/CD Automation]
+    G --> H[Live API on EC2]
 
 
