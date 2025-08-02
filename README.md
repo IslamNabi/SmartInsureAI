@@ -153,7 +153,7 @@ SmartInsureAI solves these challenges by building a **complete end-to-end MLOps 
 
 | Category      | Metrics Used                          |
 |--------------|---------------------------------------|
-| **Model**    | Accuracy, Precision, Recall, F1, ROC-AUC |
+| **Model**    | Accuracy, Precision, Recall, F1 |
 | **Pipeline** | Unit Tests, Integration Tests         |
 | **Deployment**| GitHub Action Logs, API Health Check  |
 
