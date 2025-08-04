@@ -15,3 +15,4 @@
 
 * Testing CICD
 * hi Model 
+*Syncing remote and local 
